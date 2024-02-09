@@ -169,13 +169,6 @@ impl fmt::Debug for InternalError {
     }
 }
 
-#[cfg(feature = "diesel")]
-impl From<diesel::result::Error> for InternalError {
-    fn from(err: diesel::result::Error) -> Self {
-        Self::from_source(Box::new(err))
-    }
-}
-
 #[cfg(test)]
 pub mod tests {
     use super::*;
