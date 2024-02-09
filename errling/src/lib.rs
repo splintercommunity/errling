@@ -26,7 +26,7 @@
 //! ```
 //! use std::fs;
 //!
-//! use splinter::error::InternalError;
+//! use errling::InternalError;
 //!
 //! fn check_path(path: &str) -> Result<bool, InternalError> {
 //!     let metadata = fs::metadata(path).map_err(|e| InternalError::from_source(Box::new(e)))?;
@@ -44,7 +44,7 @@
 //! use std::fmt;
 //! use std::fs;
 //!
-//! use splinter::error::InternalError;
+//! use errling::InternalError;
 //!
 //! #[derive(Debug)]
 //! enum MyError {

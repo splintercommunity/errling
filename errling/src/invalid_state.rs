@@ -38,7 +38,7 @@ impl InvalidStateError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::InvalidStateError;
+    /// use errling::InvalidStateError;
     ///
     /// let invalid_state_error = InvalidStateError::with_message("oops".to_string());
     /// assert_eq!(format!("{}", invalid_state_error), "oops");

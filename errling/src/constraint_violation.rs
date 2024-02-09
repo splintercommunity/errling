@@ -66,7 +66,7 @@ impl ConstraintViolationError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::{ ConstraintViolationError, ConstraintViolationType };
+    /// use errling::{ ConstraintViolationError, ConstraintViolationType };
     ///
     /// let constraint_violation_error = ConstraintViolationError::with_violation_type(
     ///     ConstraintViolationType::Unique
@@ -88,7 +88,7 @@ impl ConstraintViolationError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::{ ConstraintViolationError, ConstraintViolationType };
+    /// use errling::{ ConstraintViolationError, ConstraintViolationType };
     ///
     /// let db_err = std::io::Error::new(std::io::ErrorKind::Other, "db error");
     /// let constraint_violation_error = ConstraintViolationError::from_source_with_violation_type(

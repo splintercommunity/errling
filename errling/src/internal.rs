@@ -42,7 +42,7 @@ impl InternalError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::InternalError;
+    /// use errling::InternalError;
     ///
     /// let io_err = std::io::Error::new(std::io::ErrorKind::Other, "io error");
     /// let internal_error = InternalError::from_source(Box::new(io_err));
@@ -66,7 +66,7 @@ impl InternalError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::InternalError;
+    /// use errling::InternalError;
     ///
     /// let io_err = std::io::Error::new(std::io::ErrorKind::Other, "io error");
     /// let internal_error = InternalError::from_source_with_message(Box::new(io_err), "oops".to_string());
@@ -91,7 +91,7 @@ impl InternalError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::InternalError;
+    /// use errling::InternalError;
     ///
     /// let io_err = std::io::Error::new(std::io::ErrorKind::Other, "io error");
     /// let internal_error = InternalError::from_source_with_prefix(Box::new(io_err), "Could not open file".to_string());
@@ -115,7 +115,7 @@ impl InternalError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::InternalError;
+    /// use errling::InternalError;
     ///
     /// let internal_error = InternalError::with_message("oops".to_string());
     /// assert_eq!(format!("{}", internal_error), "oops");

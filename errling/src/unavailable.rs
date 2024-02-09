@@ -36,7 +36,7 @@ impl ResourceTemporarilyUnavailableError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::ResourceTemporarilyUnavailableError;
+    /// use errling::ResourceTemporarilyUnavailableError;
     ///
     /// let io_err = std::io::Error::new(std::io::ErrorKind::Other, "io error");
     /// let rtu_error = ResourceTemporarilyUnavailableError::from_source(Box::new(io_err));
@@ -64,7 +64,7 @@ impl ResourceTemporarilyUnavailableError {
     /// ```
     /// use std::time::Duration;
     ///
-    /// use splinter::error::ResourceTemporarilyUnavailableError;
+    /// use errling::ResourceTemporarilyUnavailableError;
     ///
     /// let io_err = std::io::Error::new(std::io::ErrorKind::Other, "io error");
     /// let rtu_error = ResourceTemporarilyUnavailableError::from_source_with_hint(Box::new(io_err), Duration::new(10, 0));

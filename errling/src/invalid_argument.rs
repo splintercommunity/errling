@@ -40,7 +40,7 @@ impl InvalidArgumentError {
     /// # Examples
     ///
     /// ```
-    /// use splinter::error::InvalidArgumentError;
+    /// use errling::InvalidArgumentError;
     ///
     /// let invalid_arg_error = InvalidArgumentError::new("arg1".to_string(), "argument too long".to_string());
     /// assert_eq!(format!("{}", invalid_arg_error), "argument too long (arg1)");
