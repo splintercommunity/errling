@@ -16,6 +16,7 @@
 
 use std::error;
 use std::fmt;
+use std::string::ToString;
 
 struct Source {
     prefix: Option<String>,
@@ -72,9 +73,12 @@ impl InternalError {
     /// let internal_error = InternalError::from_source_with_message(Box::new(io_err), "oops".to_string());
     /// assert_eq!(format!("{}", internal_error), "oops");
     /// ```
-    pub fn from_source_with_message(source: Box<dyn error::Error>, message: String) -> Self {
+    pub fn from_source_with_message<S: ToString>(
+        source: Box<dyn error::Error>,
+        message: S,
+    ) -> Self {
         Self {
-            message: Some(message),
+            message: Some(message.to_string()),
             source: Some(Source {
                 prefix: None,
                 source,
@@ -97,11 +101,11 @@ impl InternalError {
     /// let internal_error = InternalError::from_source_with_prefix(Box::new(io_err), "Could not open file".to_string());
     /// assert_eq!(format!("{}", internal_error), "Could not open file: io error");
     /// ```
-    pub fn from_source_with_prefix(source: Box<dyn error::Error>, prefix: String) -> Self {
+    pub fn from_source_with_prefix<S: ToString>(source: Box<dyn error::Error>, prefix: S) -> Self {
         Self {
             message: None,
             source: Some(Source {
-                prefix: Some(prefix),
+                prefix: Some(prefix.to_string()),
                 source,
             }),
         }
@@ -117,12 +121,12 @@ impl InternalError {
     /// ```
     /// use errling::InternalError;
     ///
-    /// let internal_error = InternalError::with_message("oops".to_string());
+    /// let internal_error = InternalError::with_message("oops");
     /// assert_eq!(format!("{}", internal_error), "oops");
     /// ```
-    pub fn with_message(message: String) -> Self {
+    pub fn with_message<S: ToString>(message: S) -> Self {
         Self {
-            message: Some(message),
+            message: Some(message.to_string()),
             source: None,
         }
     }
