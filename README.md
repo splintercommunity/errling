@@ -11,6 +11,7 @@ The following resources are available for Errling:
   * [Crate](https://crates.io/crates/errling)
   * [Documentation](https://docs.rs/errling/latest/errling/)
   * [Git Repository](https://github.com/splintercommunity/errling)
+  * [#errling Discord channel](https://discord.gg/SAtZmzFfws)
 
 ## License
 
