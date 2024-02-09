@@ -1,0 +1,24 @@
+[package]
+name = "errling"
+version = "0.1.0"
+authors = ["Bitwise IO, Inc."]
+edition = "2021"
+license = "Apache-2.0"
+readme = "../README.md"
+description = "A collection of intrinsically useful errors"
+repository = "https://github.com/splintercommunity/errling"
+
+[dependencies]
+
+[features]
+default = []
+
+stable = [
+    "default"
+]
+
+experimental = [
+    # The experimental feature extends stable:
+    "stable",
+    # The following features are experimental:
+]
